@@ -41,9 +41,9 @@
           <br />
           <br />
           <br />
-          <form class="enter-more" action="success.html">
+          <form class="enter-more" method="post" action="/submit">
             <div class="group">
-              <input id="nameF" required />
+              <input id="nameF" name="d_name" required />
               <span class="highlight"></span>
               <span class="bar"></span>
               <label><b>Name of Organization</b></label>
@@ -81,7 +81,6 @@
             <input
               id="subm"
               type="submit"
-              onclick="submitValue()"
               class="interactable"
               data-type="submit"
             />

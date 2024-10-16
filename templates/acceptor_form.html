@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home-Website Design comp</title>
+    <title>Donor Form</title>
     <script defer src="{{ url_for('static', filename='app.js') }}"></script>
 
     <link
@@ -36,40 +36,33 @@
     <div class="check-contain">
       <div id="checkout-scroll">
         <div class="checkout">
-          <div class="add-info"><b> Additional Information</b></div>
-          <div class="add-info-small">Awesome Service is just a SNAP away!</div>
+          <div class="add-info"><b> Acceptor Registration Form</b></div>
+          <div class="add-info-small"></div>
           <br />
           <br />
           <br />
-          <form class="enter-more" action="success.html">
+          <form class="enter-more" method="post" action="/submit-a">
             <div class="group">
-              <input id="nameF" required />
+              <input id="name" name="d_name" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>First Name</b></label>
+              <label><b>Name of Organization</b></label>
             </div>
 
             <div class="group">
-              <input required />
+              <input name="email" id="email" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Last Name</b></label>
+              <label><b>Email</b></label>
             </div>
-
             <div class="group">
-              <input required />
+              <input name="number" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Phone Number</b></label>
+              <label><b>Contact Number</b></label>
             </div>
 
             <br />
-            <div class="group">
-              <input id="timeIN" type="time" />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Preferred Time </b></label>
-            </div>
 
             <div class="group">
               <input name="Address" required />
@@ -79,22 +72,22 @@
             </div>
 
             <div class="group">
-              <input name="info" required />
+              <input name="req" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Additional Information about service</b></label>
+              <label><b>Food Requirement (number of people)</b></label>
             </div>
+
             <div class="group">
               <input id="terms-box" type="checkbox" required />
               <label id="terms"
-                >I agree to the SnapService terms and conditions</label
+                >I agree that the above details are correct</label
               >
             </div>
 
             <input
               id="subm"
               type="submit"
-              onclick="submitValue()"
               class="interactable"
               data-type="submit"
             />

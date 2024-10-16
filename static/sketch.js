@@ -12,9 +12,6 @@ window.onpointermove = event => {
 
 window.onload = function () {
   const trailer = document.getElementById("trailer"); 
-  
-  
-
 };
 
 var sec = document.getElementById("about-1");

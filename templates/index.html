@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home-FoodForThought</title>
+    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@1,800&family=Pixelify+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="blob"></div>
+    <div id="blur"></div>
+    <div id="trailer">
+      <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
+    </div>  
+   
+
+      
+       
+         <!-- <a class="interactable" href="{{ url_for('map_page') }}" data-type="down">
+          <button id="volunteerTools"><b><span id="service-button-text">Volunteer Tools</span> </b></button>
+        </a>  -->
+        
+        
+      
+    
+    <section >
+    
+
+    </div>
+    <div class="dark-color">
+
+    </div>
+    <div id="mainHeading" class="fade-in">
+      <b
+        >Transforming leftovers to lifesavers
+    </br>
+        <span class="magic">
+        NarayanSeva
+        </span>
+      </b>
+      <br>
+
+
+    </div>
+    </section>
+    <div id="button-start">
+
+    </br>
+  </br>
+    <a class="interactable" href="#scroll-to-service" data-type="down">
+      <button id="getStartedButton"><b><span id="service-button-text">Register Now</span> </b></button>
+    </a>
+    </div>
+    
+    <p id="scroll"><span id="scroll-text">scroll down for more info</span><br><i class="fa-solid fa-angle-down fa-bounce"></i></p>
+    </div>
+
+    <div id="text2">
+      Dedicated to our beautiful world
+
+    </br>
+  </br>
+    </div>
+
+    <div class="spacer" ></div>
+    <div class="spacer2" ></div>
+
+    <div class="about-grad">
+      
+    </div>
+    <div class="grad-2">
+      
+    </div>
+    <section id="sec-1" >
+    <div class="about-text">
+      <div id="about-1">
+        <span class="hidden"><b>Giving food is not about having excess; it's about having a heart that overflows with compassion.</b><sub> <br> changing lives with innovative tech💖</sub></span>
+
+        
+      </div>
+      
+
+    </div>
+    </section>
+
+    <section id="sec-2">
+      <div class="about-text">
+        <div id="about-2">
+          
+          <span class="hidden-r"><b> With the help of our complex algorithms to find the appropriate process, we created a platform which connects our generous donors to our acceptors. </b><br><sub>there are some amazing people on this rock🌍</sub></span>
+          
+        </div>
+        
+  
+      </div>
+      </section>
+      
+    <section id="sec-3 hidden">
+      <div class="about-text">
+        <div id="about-3">
+          
+            <span class="hidden"> <b>Lastly, volunteers distribute the meals all around their home city with the help of a personalized map of the most appropriate route.</b> </span>
+            
+          </div>
+        
+  
+      </div>
+      </section>
+
+      <h1 id="select-text"><b>Select Your Form</b></h1>
+    <div id="scroll-container"><div id="scroll-to-service"></div></div>
+    <div class="ServiceSelect">
+      <a style="text-decoration: none;" href="acceptor_form"  class="interactable" data-type="lead-to-page" 
+      
+      >
+      <div class="ServiceBox hidden" id="electric-box" >
+        <span class="service-text"> <b> For Accepting the Meal.</b></span> 
+      </div>
+      </a>
+      <a style="text-decoration: none;" href="{{ url_for('donor_form') }}" class="interactable" data-type="lead-to-page">
+      <div class="ServiceBox hidden" id="water-box">
+        <span class="service-text"> <b>For Contributing the Meal.</b></span> 
+      </div>
+      </a>
+      <a style="text-decoration: none;" href="{{ url_for('map_page') }}" class="interactable" data-type="lead-to-page">
+      <div class="ServiceBox hidden-r" id="home-box">
+        <span class="service-text"><b>For being a volunteer</b></span> 
+      </div>
+      </a>
+     <!-- <a style="text-decoration: none;" href="compPage.html" class="interactable" data-type="lead-to-page">
+      <div class="ServiceBox hidden-r" id="comp-box">
+        <span class="service-text"><b>Tools for volunteer</b></span> 
+      </div> 
+      </a> -->
+
+      
+      
+    </div>
+    <br>
+    
+    <br>
+    <br>
+    <br>
+
+
+
+    <script src="{{url_for( 'static', filename='sketch.js' )}}"></script>
+
+
+    <div class="spacer3"></div>
+  </body>
+</html>

@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 import main
 import addDonorData
+import csv
 
 app = Flask(__name__)
 
@@ -11,9 +12,9 @@ def home():
 
 @app.route('/page')
 def map_page():
-    c,directions = main.main()
+    c,directions,names,allocations = main.main()
     
-    return render_template("page.html",solution=c,directions=directions)
+    return render_template("page.html",solution=c,directions=directions,names=names,allocations=allocations)
 
 @app.route('/donor_form')
 def donor_form():
@@ -33,6 +34,25 @@ def submit():
 @app.route('/acceptor_form')
 def acceptor_form():
     return render_template('acceptor_form.html')
+
+@app.route('/food_form')
+def food_form():
+    donors = []
+    with open('donorData.csv',"r") as file:
+        reader = csv.reader(file)
+        next(reader)
+        try:
+            for row in reader:
+                donors.append(row[1])
+        except:
+            pass
+
+    
+    return render_template('food_form.html',donors=donors)
+
+
+
+
 if __name__ == '__main__':
     app.run(debug=True)
 

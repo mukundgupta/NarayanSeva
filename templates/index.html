@@ -35,7 +35,36 @@
       <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
     </div>  
    
+    <div id="sidebar">
 
+      <ul class="side-text">
+        <li><a href="{{url_for('food_form')}}">Input Data as Donor</a></li>
+        <li><a href="#">View All Donors</a></li>
+        <li><a href="#">View All Acceptors</a></li>
+        <li><a href="{{url_for('map_page')}}">Today's Route (for volunteers)</a></li>
+        <li><a href="#">About NarayanSeva</a></li>
+      </ul>
+  
+      <div id="sidebar-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+  
+    </div>
+  
+    
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+  
+    $(document).ready(function(){
+      $('#sidebar-btn').click(function(){
+        $('#sidebar').toggleClass('visible');
+      });
+    });
+  
+    </script>
       
        
          <!-- <a class="interactable" href="{{ url_for('map_page') }}" data-type="down">

@@ -59,7 +59,7 @@ def solveBestRoute(data, manager, routing):
 # printing solution (copied)
 def print_solution(manager, routing, solution,data):
     """Prints the solution."""
-    #print('Objective: {} miles'.format(solution.ObjectiveValue()))
+    
     index = routing.Start(0)
     plan_output = 'Route for vehicle 0:\n'
     route_distance = 0

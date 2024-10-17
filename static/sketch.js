@@ -92,7 +92,7 @@ window.onmousemove = e => {
 
 function submitValue() {
   // Get the value entered by the user
-  var input = document.getElementById('nameF');
+  var input = document.getElementById('name');
   var value = input.value;
 
   // Store the value in localStorage

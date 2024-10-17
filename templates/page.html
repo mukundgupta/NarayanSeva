@@ -4,23 +4,52 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Route Optimization Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style_r.css')}}"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@1,800&family=Pixelify+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Optimized Route</h1>
+    <h1 class="head-text">Optimized Route</h1>
 
-    <p>{{ solution }}</p>
-    <!-- Display the optimized route and allocations -->
+    <div>
+      <b>
+        <ol class="route-text">
+          {% for point in solution %}
+          <li>{{names[point]}}</li>
+          {% endfor %}
+        </ol>
+        <h1 class="text-2">Allocations</h1>
+        <ul class="allo">
+          {% for i in allocations%}
+          <li>{{i}}</li>
+          {%endfor%}
+        </ul>
+      </b>
+    </div>
+    <!-- Display the optimized route -->
     <div id="map">
       <iframe
+        class="map-frame"
         src="{{ url_for('static', filename='map.html') }}"
         width="100%"
         height="600px"
       ></iframe>
     </div>
-    <div></div>
-    <p>
-    
-    </p>
-  </div>
+    <div class="dir-div">
+      <button class="getStartedButton">
+        <b><span id="service-button-text">View Directions</span> </b>
+      </button>
+    </div>
   </body>
 </html>

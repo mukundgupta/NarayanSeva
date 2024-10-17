@@ -398,3 +398,20 @@ input:focus ~ .highlight {
   filter: blur(0px);
   transform: translateX(0%);
 }
+
+
+
+
+
+
+
+
+#donor {
+  top: 30px;
+  background-color: #56C596;
+}
+
+.donor_select {
+  padding-top: 35px;
+  padding-left: 10px;
+}

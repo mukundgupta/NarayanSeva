@@ -4,7 +4,79 @@ html {
 
 
 
- 
+#sidebar{
+  border-radius: 20px;
+  z-index: 1000;
+	background:#7ce49484; 
+	width:200px;
+	height:95%;
+	display:block;
+	position:absolute;
+	left:-200px;
+	top:10px;
+	transition:left 0.3s linear;
+}
+
+#sidebar.visible{
+  
+  top: 10px;
+	left:10px;
+	transition:left 0.1s linear;
+}
+
+ul{
+	margin:0px;
+	padding:0px;
+}
+
+ul li{
+	list-style:none;
+}
+
+ul li a{
+	background:#cff4d2be;
+	color: black;
+	border-bottom:1px solid black;
+	display:block;
+	width:180px;
+	padding:10px;
+	text-decoration: none;
+}
+
+#sidebar-btn{
+	display:inline-block;
+	vertical-align: middle;
+	width:40px;
+	height:px;
+	cursor:pointer;
+	margin:20px;
+	position:absolute;
+	top:0px;
+  
+	right:-60px;
+}
+
+#sidebar-btn span{
+	height:8px;
+	background:white;
+	margin-bottom:5px;
+	display:block;
+}
+
+#sidebar-btn span:nth-child(2){
+	width:75%;
+}
+
+#sidebar-btn span:nth-child(3){
+	width:50%;
+}
+
+.side-text {
+  background-color: black;
+}
+
+
+
 .magic{
   background: linear-gradient(to right, #55c595,#cff4d2,#55c595);
   -webkit-background-clip: text;

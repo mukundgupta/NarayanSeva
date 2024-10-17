@@ -43,33 +43,52 @@
           <br />
           <form class="enter-more" method="post" action="/submit">
             <div class="group">
-              <input id="name" name="d_name" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Name of Organization</b></label>
+              <label for="donors">Select Donor</label>
+              <div class="donor_select">
+                <select name="donor" id="donor" required>
+                  <option value="value" selected disabled hidden>
+                    Select Donor
+                  </option>
+                  {%for i in donors%}
+                  <option>{{i}}</option>
+                  {%endfor%}
+                </select>
+              </div>
             </div>
 
-            <div class="group">
-              <input name="email" id="email" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Email</b></label>
-            </div>
             <div class="group">
               <input name="number" required />
               <span class="highlight"></span>
               <span class="bar"></span>
               <label><b>Contact Number</b></label>
             </div>
-
-            <br />
-
             <div class="group">
-              <input name="Address" required />
+              <input name="rice" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Address</b></label>
+              <label><b>Amount of rice (in kg)</b></label>
             </div>
+            <div class="group">
+              <input name="dal" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Amount of dal (in kg)</b></label>
+            </div>
+
+            <div class="group">
+              <input name="roti" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Amount of Roti (in kg)</b></label>
+            </div>
+
+            <div class="group">
+              <input name="vege" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Amount of vegetable (in kg)</b></label>
+            </div>
+            <br />
 
             <div class="group">
               <input id="terms-box" type="checkbox" required />

@@ -27,7 +27,7 @@ def main():
     Donors : 4,5
     Starting point: 0
     """
-    
+    data['loc_names'] = ["starting point", "Acceptor A","Acceptor B","Acceptor C","Donor A(Sathya Sai)","Donor B","End"]
     data['food_types'] = {
         0:'Cooked Food',
         1:'Packaged Food'
@@ -68,11 +68,10 @@ def main():
             route.append((lat,lon))
  
     direct = display_route_on_map(route)
-    print(direct)
+    
+    allo = allocate_food(manager, routing, solution, data)
 
-    allocate_food(manager, routing, solution, data)
-
-    return route_nodes,direct
+    return route_nodes,direct,data['loc_names'], allo
     
     
 
@@ -90,7 +89,7 @@ def allocate_food(manager, routing, solution, data):
     remaining_supply = {donor_index: data['donors'][donor_index]['supply'] for donor_index in data['donors']}
 
     total_food_delivered = 0
-
+    allocations = []
     unfulfilled_acc = {}
     #iterating over all routes
     for route_index in range(routing.vehicles()):
@@ -113,7 +112,7 @@ def allocate_food(manager, routing, solution, data):
                         remaining_supply[donor_index] -= food_amount_allocated
                         acceptor_req -= food_amount_allocated
                         total_food_delivered += food_amount_allocated 
-
+                        allocations.append(f"Allocated {food_amount_allocated} units of food to Acceptor {node_index} from Donor {donor_index}")
                         print(f"Allocated {food_amount_allocated} units of food to Acceptor {node_index} from Donor {donor_index}")
 
                         if acceptor_req <= 0:
@@ -122,22 +121,30 @@ def allocate_food(manager, routing, solution, data):
                     unfulfilled_acc[node_index] = acceptor_req
 
             index = solution.Value(routing.NextVar(index))
-
+    allocations.append("Allocation Complete!")
     print("Allocation Complete\n")
     # Print remaining supplies after deliveries
+    allocations.append("Remaining Supplies after delivery: ")
     print("Remaining Supplies after delivery: ")
     for donor_index, supplies in remaining_supply.items():
         if supplies:
+            allocations.append(f"Donor {donor_index}: {supplies} units of type {data['donors'][donor_index]['type']} remaining")
             print(f"Donor {donor_index}: {supplies} units of type {data['donors'][donor_index]['type']} remaining")
         else:
+            allocations.append(f"Donor {donor_index}: All food allocated")
             print(f"Donor {donor_index}: All food allocated")
     
     if unfulfilled_acc:
+        allocations.append("\nAcceptors whose needs could not be met: ")
         print("\nAcceptors whose needs could not be met: ")
         for i in unfulfilled_acc:
+            allocations.append(f"Acceptor {i} has {unfulfilled_acc[i]} units of unmet needs. Food type: {data['acceptors'][i]['type']}")
             print(f"Acceptor {i} has {unfulfilled_acc[i]} units of unmet needs. Food type: {data['acceptors'][i]['type']}")
     else:
+        allocations.append("All acceptors needs were fulfilled")
         print("All acceptors needs were fulfilled")
+    print(allocations)
+    return allocations
 
 
 def solveBestRoute(data, manager, routing):
@@ -186,17 +193,21 @@ def display_route_on_map(route):
     for i,(lat,lon) in enumerate(route[0:len(route)-1]):
         
         folium.Marker([lat,lon], popup = f"Location {i}").add_to(route_map)
+
     
-    complete_directions = ""
+    directions = []
+    
     for i in range(len(route)-1):
         start = route[i]
         end = route[i+1]
 
-        a,directions = actual_path(start[0], start[1], end[0], end[1])    
-     
+        segment,part_directions = actual_path(start[0], start[1], end[0], end[1])   
         
-        
-        
+        folium.PolyLine(segment, color="green", weight=3.5, opacity=1).add_to(route_map)
+
+        directions.append(part_directions)
+    
+    route_map.save("static/map.html")
     return directions
 
 def actual_path(lat1, lon1, lat2, lon2):

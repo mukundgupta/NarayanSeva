@@ -54,7 +54,7 @@ def main():
     
     routing.solver().Add(
     routing.NextVar(routing.Start(0)) >= manager.NodeToIndex(4)  # Start from a donor (index >= 4)
-)
+    )
     print("\nSOLUTION")
     solution = solveBestRoute(data, manager, routing)
     
@@ -140,36 +140,16 @@ def allocate_food(manager, routing, solution, data):
         print("All acceptors needs were fulfilled")
 
 
-def add_food_type_constraint(routing, data, manager):
-    # Create CumulVar to track food type along the route
-    food_type_dimension = routing.GetDimensionOrDie('food_type')
-    
-    # Iterate over donors to initialize the food type
-    for donor_index in data['donors']:
-        donor_type = data['donors'][donor_index]['type']
-        
-        # Set the vehicle's food type to the donor's type at the start
-        routing.AddToAssignment(food_type_dimension.CumulVar(manager.NodeToIndex(donor_index)))
-
-    # Add constraints to ensure food type compatibility between donors and acceptors
-    for acceptor_index in data['acceptors']:
-        acceptor_type = data['acceptors'][acceptor_index]['type']
-
-        # Ensure that the vehicle's current food type matches the acceptor's required food type
-        routing.solver().Add(
-            food_type_dimension.CumulVar(manager.NodeToIndex(acceptor_index)) == acceptor_type
-        )
-
 def solveBestRoute(data, manager, routing):
     
-    def distance_callback(to, fro):
+    def get_distance(to, fro):
         from_node = manager.IndexToNode(fro)
         to_node = manager.IndexToNode(to)
         return data['distanceMatrix'][from_node][to_node]
-    callback_index = routing.RegisterTransitCallback(distance_callback)
+    callback_index = routing.RegisterTransitCallback(get_distance)
     routing.SetArcCostEvaluatorOfAllVehicles(callback_index)
 
-    #add_food_type_constraint(routing, data, manager)
+   
 
     parameters = pywrapcp.DefaultRoutingSearchParameters()
     parameters.first_solution_strategy = (routing_enums_pb2.FirstSolutionStrategy.PATH_CHEAPEST_ARC)

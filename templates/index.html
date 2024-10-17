@@ -39,8 +39,8 @@
 
       <ul class="side-text">
         <li><a href="{{url_for('food_form')}}">Input Data as Donor</a></li>
-        <li><a href="#">View All Donors</a></li>
-        <li><a href="#">View All Acceptors</a></li>
+        <li><a href="{{url_for('static', filename='view_donors.html')}}">View All Donors</a></li>
+        <li><a href="{{url_for('static', filename='view_acceptors.html')}}">View All Acceptors</a></li>
         <li><a href="{{url_for('map_page')}}">Today's Route (for volunteers)</a></li>
         <li><a href="#">About NarayanSeva</a></li>
       </ul>
@@ -67,9 +67,7 @@
     </script>
       
        
-         <!-- <a class="interactable" href="{{ url_for('map_page') }}" data-type="down">
-          <button id="volunteerTools"><b><span id="service-button-text">Volunteer Tools</span> </b></button>
-        </a>  -->
+   
         
         
       
@@ -125,8 +123,9 @@
     <section id="sec-1" >
     <div class="about-text">
       <div id="about-1">
+        <!--  -->
         <span class="hidden"><b>Giving food is not about having excess; it's about having a heart that overflows with compassion.</b><sub> <br> changing lives with innovative tech💖</sub></span>
-
+        <div class="hidden"> <img class="donateimage" width="300px" height="300px"  src="{{url_for('static', filename='donateimage.png')}}">
         
       </div>
       
@@ -139,7 +138,7 @@
         <div id="about-2">
           
           <span class="hidden-r"><b> With the help of our complex algorithms to find the appropriate process, we created a platform which connects our generous donors to our acceptors. </b><br><sub>there are some amazing people on this rock🌍</sub></span>
-          
+          <div class="hidden"> <img class="donateimage" width="200px" height="200px"  src="{{url_for('static', filename='compimage.png')}}">
         </div>
         
   
@@ -151,6 +150,7 @@
         <div id="about-3">
           
             <span class="hidden"> <b>Lastly, volunteers distribute the meals all around their home city with the help of a personalized map of the most appropriate route.</b> </span>
+            <div class="hidden"> <img class="volunteer_tools" width="400px" height="400px"  src="{{url_for('static', filename='volunteer_image.png')}}"  /></div>
             
           </div>
         
@@ -173,7 +173,7 @@
         <span class="service-text"> <b>For Contributing the Meal.</b></span> 
       </div>
       </a>
-      <a style="text-decoration: none;" href="{{ url_for('map_page') }}" class="interactable" data-type="lead-to-page">
+      <a style="text-decoration: none;" href="{{ url_for('volunteer_form') }}" class="interactable" data-type="lead-to-page">
       <div class="ServiceBox hidden-r" id="home-box">
         <span class="service-text"><b>For being a volunteer</b></span> 
       </div>

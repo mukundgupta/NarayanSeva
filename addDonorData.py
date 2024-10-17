@@ -8,7 +8,7 @@ Generates an ID, attempts to get coordinates(latitude, longitude) from the provi
 #["donor_id","name_of_org", "contact","email","address","coordinates"]
 def get_id():
     '''returns the new ID that is to be appended.'''
-    with open("donorData.csv", "r",newline='') as file:
+    with open("static/donorData.csv", "r",newline='') as file:
         reader = csv.reader(file)
         
         count = 0
@@ -19,7 +19,7 @@ def get_id():
         
 def add_donor_data(d_data):
     '''appends donor data to a csv file.'''
-    with open("donorData.csv", "a+",newline='\n') as file:
+    with open("static/donorData.csv", "a+",newline='\n') as file:
 
         writer = csv.writer(file)
         count = get_id()

@@ -1,14 +1,16 @@
 import requests #send request to OSRM
 from ortools.constraint_solver import pywrapcp, routing_enums_pb2
 import folium #displaying map
+import csv
 
 
 def main():
     
     data = {}
     data['locations'] = [
-        [22.72986625513625,75.80408280922893],
+        
         [22.72748258309627,75.90626359940522],
+        [22.72986625513625,75.80408280922893],
         [22.754022893354374,75.90081762245143],
         [22.720283605809062, 75.85661547732913],
         [22.757286154164834,75.90080800995301],
@@ -16,18 +18,19 @@ def main():
         ]
     coord = ';'.join([f"{lon},{lat}" for lat, lon in data['locations']])
     """  hardcoded points for now
-    Point 0 -> Airport --start-end 
-    Point 1 -> my house 
+    Point 0 ->  my house --start-end point
+    Point 1 -> airport 
     Point 2 -> BCM
     Point 3 -> random point (center of indore)
-    Point 4 -> School
+    Point 4 -> School (sathya sai)
     Point 5 -> NMIMS
-    
+    All points after and including 4 are donors
     Acceptors : 1,2,3
     Donors : 4,5
     Starting point: 0
     """
-    data['loc_names'] = ["starting point", "Acceptor A","Acceptor B","Acceptor C","Donor A(Sathya Sai)","Donor B","End"]
+    data['loc_names'] = ["starting point", "Acceptor A","Acceptor B","Acceptor C","Donor A(Sathya Sai)","Donor B"]
+
     data['food_types'] = {
         0:'Cooked Food',
         1:'Packaged Food'
@@ -40,9 +43,48 @@ def main():
         }
     
     data['donors'] = {
-        4:{'type':0,'supply':50},
+        4:{'type':0,'supply':68},
         5:{'type':1,'supply':50}
         }
+
+    # getting new donors if they are not already in data
+    with open("static/donorData.csv","r") as file:
+
+        file.seek(0)
+        reader = csv.reader(file)
+        next(reader)
+        for row in reader:
+            
+            c1 = ""
+            c2 = ""
+            # check if coordinates were found
+            if row[5] != 'manual intervention required!':
+                ch = 1
+                print("in")
+                new_c = []
+                t = tuple(row[5])
+                # get float for lat,lon from tuple
+                for i in t:
+                    if ch == 1:
+                        if i.isnumeric() or i =='.':
+                            c1 += i
+                        elif i == ',':
+                            print(c1)
+                            ch = 2
+                    elif ch == 2:
+                        if i.isnumeric() or i =='.':
+                            c2 += i
+                new_c.append(float(c1))
+                new_c.append(float(c2))
+                # if new coordinates are not already in data, add them 
+                if new_c not in data['locations']:
+                    data['locations'].append(new_c)
+                    data['loc_names'].append(row[1])
+                    data['donors'][len(data['locations'])] = {"type":0, "supply":30} # for now, supply is hardcoded, but it can be changed to get supply from stored file
+                    print(data['loc_names'])
+    
+    
+    coord = ';'.join([f"{lon},{lat}" for lat, lon in data['locations']])
 
     data['distanceMatrix'] = createDistanceMatrix(coord)
     print("DISTANCE MATRIX: ")
@@ -123,7 +165,7 @@ def allocate_food(manager, routing, solution, data):
             index = solution.Value(routing.NextVar(index))
     allocations.append("Allocation Complete!")
     print("Allocation Complete\n")
-    # Print remaining supplies after deliveries
+    # Print remaining supplies after deliveries, store them in list to be outputted in html
     allocations.append("Remaining Supplies after delivery: ")
     print("Remaining Supplies after delivery: ")
     for donor_index, supplies in remaining_supply.items():

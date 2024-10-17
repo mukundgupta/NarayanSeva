@@ -320,8 +320,8 @@ body::-webkit-scrollbar {
 
 
 .technician {
-  position: absolute;
-  top:300px;
+  position: relative;
+  top:100px;
   padding-top: 20px;
   z-index: 1000;
   background-color: white;

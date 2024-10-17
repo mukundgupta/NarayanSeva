@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Donors</title>
+    <link rel="stylesheet" href="style_r.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@1,800&family=Pixelify+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="head-t-text">Acceptors (Narayans):</h1>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+    <script>
+      function arrayToTable(tableData) {
+        var table = $("<table></table>");
+        $(tableData).each(function (i, rowData) {
+          var row = $("<tr></tr>");
+          $(rowData).each(function (j, cellData) {
+            row.append($("<td>" + cellData + "</td>"));
+          });
+          table.append(row);
+        });
+        return table;
+      }
+
+      $.ajax({
+        type: "GET",
+        url: "acceptorData.csv",
+        success: function (data) {
+          $("body").append(arrayToTable(Papa.parse(data).data));
+        },
+      });
+    </script>
+  </body>
+</html>

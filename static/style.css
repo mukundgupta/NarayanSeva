@@ -101,15 +101,16 @@ ul li a{
 
 
 body{
-    background-color: black;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: 100px;   
+  background-color: black;
+  overflow-x: hidden;
+  max-height: 2000vh; /* Set max scroll height to 200% of viewport */
+  overflow-y: scroll;
+  
     
 }
 
 
-/*--custom scrollbar-- */
+--custom scrollbar--
 body::-webkit-scrollbar {
   width: 5px;
   background-color: transparent;
@@ -148,6 +149,7 @@ body::-webkit-scrollbar-track {
     animation: rotate 5s infinite;
     opacity: 0.8;
     z-index: 0;
+    max-height: 100vw;
   }
   
   #blur {
@@ -158,6 +160,7 @@ body::-webkit-scrollbar-track {
     position: absolute;
     z-index: 0;
     backdrop-filter: blur(10vmax);
+    
   }
 
 
@@ -307,16 +310,6 @@ body:hover > #trailer {
 }
 
 /* Style the header links */
-.header a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 2px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 50px;
-}
 
 #button-start {
   position: absolute;
@@ -674,15 +667,15 @@ body:hover > #trailer {
 #about-1 {
   
   min-height: 10%;
-  max-height: 400%;
+  max-height: 100%;
   padding: 160vh 0;
   font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  
   padding-left: 50px;
-  padding-right: 50px;
+  padding-right: 100px;
   
 }
 
@@ -690,7 +683,12 @@ sub{
   font-size: 29px;
 }
 
-.house-icon-time-image {
+.volunteer_image {
+  position: relative;
+  border-radius: 20%;
+}
+
+.donateimage {
   position: relative;
   border-radius: 20%;
 }
@@ -699,7 +697,7 @@ sub{
   padding: 220vh 0;
   font-family: "Raleway", sans-serif;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 20px;
   padding-left: 50px;
@@ -708,14 +706,14 @@ sub{
 }
 
 #about-3 {
-  padding: 300vh 0;
+  padding: 280vh 0;
   display: flex;
   font-family: "Raleway", sans-serif;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 80px;
+  padding-right: 70px;
+    
   
 }
 

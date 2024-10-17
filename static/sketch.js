@@ -32,7 +32,13 @@ window.addEventListener('scroll', function() {
 })
 
 
+window.onscroll = function() {
+  const maxScroll = 3000; // Set maximum scroll height 
 
+  if (window.scrollY > maxScroll) {
+    window.scrollTo(0, maxScroll); // force scroll to stay at maxScroll
+  }
+};
 
 
 
@@ -90,19 +96,7 @@ window.onmousemove = e => {
 }
 
 
-function submitValue() {
-  // Get the value entered by the user
-  var input = document.getElementById('name');
-  var value = input.value;
 
-  // Store the value in localStorage
-  localStorage.setItem('Name', value);
-
-  var tech_time = document.getElementById('timeIN');
-  var time_val = tech_time.value;
-
-  localStorage.setItem("time",time_val)
-}
 
 
 

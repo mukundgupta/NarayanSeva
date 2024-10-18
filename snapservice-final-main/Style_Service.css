@@ -1,0 +1,450 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    
+    height: 150vh;
+    background-image: linear-gradient(to right, blueviolet,purple);
+}
+
+/*--custom scrollbar-- */
+body::-webkit-scrollbar {
+    width: 5px;
+    background-color: transparent;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: blueviolet;
+    border-radius: 5px;
+  
+  }
+  body::-webkit-scrollbar:hover {
+  
+    width: 10px;  
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(132, 0, 255);
+  }
+  
+  body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  
+  /*--end for custom scrollbar--*/
+  
+
+#blob {
+    background-color: white;
+    height: 25vmax;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right,yellow ,blue );
+    animation: rotate 5s infinite;
+    opacity: 1;
+    z-index: 0;
+  }
+  
+  #blur {
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    height: 400vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 0;
+    backdrop-filter: blur(14vmax);
+  }
+
+  .selection {
+    text-align: center;
+    position: relative;
+    z-index: 6;
+    color: black;
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    border-radius: 30px;
+    
+    font-family: "Raleway",sans-serif;
+
+    animation: shrink 0.6s;
+    animation-fill-mode: forwards;
+    line-height: 200px;
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+
+  .selection:hover{
+    animation: grow-flex, extra-text-col;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  .contain {
+    position: relative;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    top: -8px;
+    display: flex;
+    
+    flex: wrap; 
+    white-space: nowrap;
+
+  }
+  #e-contain {
+    background: linear-gradient(to right,#A64029, #F2B705);
+    
+    animation: background-pan 1s infinite;
+  }
+
+  #w-contain {
+    background: linear-gradient(to right,#002733, #13547a);
+    
+    animation: background-pan 1s infinite;
+  }
+
+  #h-contain {
+    background: linear-gradient(to right,#192617, #5a7340);
+    
+    animation: background-pan 1s infinite;
+  }
+
+  @keyframes background-pan {
+    from{background-position: 0% center;}
+    to{background-position: -200% center;}
+  }
+   span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+   }
+   #main-text {
+    left: 0px;
+    top: 90px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    color: black; 
+   }
+   #extra-text {
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    color: white;     
+   }
+
+   #extra-text:hover {
+    animation: extra-text-col;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards
+    
+   }
+
+   @keyframes extra-text-col {
+    from{color: white;}
+    to{color: black;}
+   }
+
+  @keyframes grow-flex {
+    from{transform: scale(100%);}
+    to{transform: scale(130%);}
+  }
+  @keyframes shrink {
+    from{transform: scale(130%);}
+    to{transform: scale(100%); }
+  }
+
+
+  
+
+  
+
+
+  .go-home{
+    position: absolute;
+    z-index: 5;
+
+    color: white;
+    padding-top: 50px;
+  }
+
+
+  body:hover > #trailer {
+    opacity: 1;
+  }
+  
+  #trailer {
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 20px;
+    
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 50;
+    
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 500ms ease;
+    
+    display: grid;
+    place-items: center;
+  }
+  
+  #trailer:not([data-type=""]) > #trailer-icon {
+    opacity: 1;
+  }
+  
+  #trailer-icon {
+    font-size: 6px;
+    line-height: 4px;
+  
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+  
+  
+  #heading-text {
+    font-size: 30px;
+    width: 100vw;
+    text-align: center;
+    position: absolute;
+    z-index: 5;
+    color: white;
+    font-family: "Raleway",sans-serif;
+    padding-top: 150px;
+  }
+  
+  
+  .check-contain {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 1;
+    
+  }
+
+  #checkout-scroll {
+    color: white;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .checkout {
+    position: absolute;
+    top: 100px;
+    background-color: white;
+    width: 70vw;
+    height: 115vh;
+    border-radius: 40px;
+    box-shadow: 20px 20px purple;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+  }
+
+  #subm {
+    border-radius: 100px;
+    background-color: purple;
+    color: white;
+    font-family: "Raleway",sans-serif;
+  }
+  
+
+  .add-info {
+    top: 22px;
+    position: relative;
+    padding-top: 10px;
+    color: black;
+    font-family: "Raleway",sans-serif;
+    font-size: 40px;
+    
+  }
+
+  .add-info-small {
+    position: relative;
+    top: 25px;
+    color: black;
+    font-family: "Raleway",sans-serif;
+    font-size: 20px;
+    
+  }
+
+  .enter-more {
+    color: black;
+    font-family: "Raleway",sans-serif;
+    font-size: 20px;
+
+  }
+
+  #terms {
+    font-size: 13px;
+    
+  }
+
+  
+
+
+  .group 			  { 
+  position:relative; 
+  margin-bottom:45px; 
+}
+input 				{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:800px;
+  border:none;
+  border-bottom:1px solid #757575;
+}
+input:focus 		{ outline:none; }
+
+/* LABEL ======================================= */
+label 				 {
+  color:#999; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#5264AE;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+.hey-text {
+  position: absolute;
+  z-index: 15;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+
+  height: 100vh;
+  font-family: "Raleway",sans-serif;
+
+
+
+}
+#hey-name-text {
+  width: 600px;
+  padding-top: 40px;
+  font-size: 40px;
+}
+
+
+.hidden {
+  opacity: 0;
+  transform: translateX(-80%);
+  filter: blur(10p);
+  transition:all 1s;
+}
+
+.hidden-r {
+  opacity: 0;
+  transform: translateX(80%);
+  filter: blur(10px);
+  transition:all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0%);
+}

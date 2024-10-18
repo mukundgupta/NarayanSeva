@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrical Services</title>
+    <link rel="stylesheet" href="Style_Service.css" />
+    <script src="sketch.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@1,800&family=Pixelify+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div id="blob"></div>
+    <div id="blur"></div>
+    <div id="trailer">
+      <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
+    </div>
+
+    <span id="heading-text"><b>Please Select the type of Service</b></span>
+
+    <a class="interactable" data-type="home" href="index.html#scroll-to-service"
+      ><div class="go-home">
+        <i
+          class="fa-solid fa-house fa-2xl"
+          style="color: #ffffff; font-size: 40px; padding-left: 20px"
+        ></i>
+      </div>
+    </a>
+
+    <div class="contain" id="e-contain">
+      <a href="#checkout-scroll" style="text-decoration: none">
+        <div class="interactable selection s1" data-type="plus">
+          <b>Appliance Installation</b>
+          <span id="extra-text"
+            ><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            You can now finally <br />use your device😌</span
+          >
+        </div>
+      </a>
+      <a href="#checkout-scroll" style="text-decoration: none">
+        <div class="interactable selection s2" data-type="plus">
+          <b>Appliance Repair</b>
+          <span id="extra-text"
+            ><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            Is your machine broken <br />again?😣</span
+          >
+        </div>
+      </a>
+      <a href="#checkout-scroll" style="text-decoration: none">
+        <div class="interactable selection s3" data-type="plus">
+          <b>Wiring Work</b>
+          <span id="extra-text"
+            ><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            Say hello to<br />
+            the wire master!🙏</span
+          >
+        </div>
+      </a>
+      <a href="#checkout-scroll" style="text-decoration: none">
+        <div class="interactable selection s4" data-type="plus">
+          <b>Misc and other repairs</b>
+          <span id="extra-text"
+            ><br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+
+            We've got you covered!</span
+          >
+        </div>
+      </a>
+    </div>
+
+    <div class="check-contain">
+      <div id="checkout-scroll">
+        <div class="checkout">
+          <div class="add-info"><b> Additional Information</b></div>
+          <div class="add-info-small">Awesome Service is just a SNAP away!</div>
+          <br />
+          <br />
+          <br />
+          <form class="enter-more" action="success.html">
+            <div class="group">
+              <input id="nameF" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>First Name</b></label>
+            </div>
+
+            <div class="group">
+              <input required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Last Name</b></label>
+            </div>
+
+            <div class="group">
+              <input required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Phone Number</b></label>
+            </div>
+
+            <br />
+            <div class="group">
+              <input id="timeIN" type="time" />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Preferred Time </b></label>
+            </div>
+
+            <div class="group">
+              <input name="Address" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Address</b></label>
+            </div>
+
+            <div class="group">
+              <input name="info" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Additional Information about service</b></label>
+            </div>
+            <div class="group">
+              <input type="checkbox" required />
+              <label id="terms"
+                >I agree to the SnapService terms and conditions</label
+              >
+            </div>
+            <input
+              id="subm"
+              type="submit"
+              onclick="submitValue()"
+              class="interactable"
+              data-type="submit"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

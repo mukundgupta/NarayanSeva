@@ -6,6 +6,8 @@ for store in items:
     print(store)
     for item in items[store]:
         print(items[store][item])
+        if items[store][item][1] <= 5:
+            to_notify[store] = True
         
 for i in to_notify:
     print(i)

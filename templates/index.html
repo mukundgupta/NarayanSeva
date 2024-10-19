@@ -34,7 +34,7 @@
     <div id="trailer">
       <i id="trailer-icon" class="fa-solid fa-arrow-up-right"></i>
     </div>  
-   
+
     <div id="sidebar">
 
       <ul class="side-text">
@@ -50,6 +50,10 @@
         <span></span>
         <span></span>
       </div>
+  
+    </div>
+      <img class = "logo" src="{{url_for('static', filename='logo.png')}}">
+      
   
     </div>
   
@@ -138,7 +142,7 @@
         <div id="about-2">
           
           <span class="hidden-r"><b> With the help of our complex algorithms to find the appropriate process, we created a platform which connects our generous donors to our acceptors. </b><br><sub>there are some amazing people on this rock🌍</sub></span>
-          <div class="hidden"> <img class="donateimage" width="200px" height="200px"  src="{{url_for('static', filename='compimage.png')}}">
+          <!-- <div class="hidden"> <img class="donateimage" width="200px" height="200px"  src="{{url_for('static', filename='compimage.png')}}"> -->
         </div>
         
   
@@ -158,10 +162,10 @@
       </div>
       </section>
 
-      <h1 id="select-text"><b>Select Your Form</b></h1>
+      <h1 class="magic2" id="select-text"><b>Select Your Form</b></h1>
     <div id="scroll-container"><div id="scroll-to-service"></div></div>
     <div class="ServiceSelect">
-      <a style="text-decoration: none;" href="{{url_for('acceptor_form')}}"  class="interactable" data-type="lead-to-page" 
+    <!--   <a style="text-decoration: none;" href="{{url_for('acceptor_form')}}"  class="interactable" data-type="lead-to-page" 
       
       >
       <div class="ServiceBox hidden" id="electric-box" >
@@ -182,9 +186,32 @@
       <div class="ServiceBox hidden-r" id="donate-box">
         <span class="service-text"><b>Donate</b></span> 
       </div> 
-      </a> 
+      </a>  -->
 
-      
+      <a class = "neon" id="acce" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span><b>Accepting Meals</b>
+    </a>
+    <a class = "neon" id="meal" href="{{url_for('donor_form')}}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span><b>Contributing Meals</b>
+    </a>
+    <a class = "neon" id="vol" href="{{url_for('volunteer_form')}}">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span><b>Volunteering</b>
+    </a>
+    <a class = "neon" id="don" href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span><b>Donate</b>
+  </a>
       
     </div>
     <br>
@@ -193,7 +220,42 @@
     <br>
     <br>
 
-
+    <div class="gradient-bg">
+      <svg 
+           viewBox="0 0 100vw 100vw"
+           xmlns='http://www.w3.org/2000/svg'
+           class="noiseBg"
+           >
+        <filter id='noiseFilterBg'>
+          <feTurbulence 
+                        type='fractalNoise'
+                        baseFrequency='0.6'
+                        stitchTiles='stitch' />
+        </filter>
+    
+        <rect
+              width='100%'
+              height='100%'
+              preserveAspectRatio="xMidYMid meet"
+              filter='url(#noiseFilterBg)' />
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" class="svgBlur">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+            <feBlend in="SourceGraphic" in2="goo" />
+          </filter>
+        </defs>
+      </svg>
+      <div class="gradients-container">
+        <div class="g1"></div>
+        <div class="g2"></div>
+        <div class="g3"></div>
+        <div class="g4"></div>
+        <div class="g5"></div>
+        <div class="interactive"></div>
+      </div>
 
     <script src="{{url_for( 'static', filename='sketch.js' )}}"></script>
 

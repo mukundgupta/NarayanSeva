@@ -24,6 +24,36 @@ body{
     top: 100px;
     font-family: 'Raleway', sans-serif;
 }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+  }
+
+  th {
+    background-color: #f2f2f200;
+    font-weight: bold;
+  }
+
+  td {
+    background-color: #f9f9f900;
+    color: #ffffff;
+  }
+.head-t-text {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+}
 
 .allo {
     position: absolute;

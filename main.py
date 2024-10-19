@@ -83,7 +83,7 @@ def main():
                     data['donors'][len(data['locations'])] = {"type":0, "supply":30} # for now, supply is hardcoded, but it can be changed to get supply from stored file
                     print(data['loc_names'])
     
-    
+    # since OSRM requires data as lon,lat intead of lat,lon, we swap them
     coord = ';'.join([f"{lon},{lat}" for lat, lon in data['locations']])
 
     data['distanceMatrix'] = createDistanceMatrix(coord)
@@ -91,11 +91,12 @@ def main():
     for row in data['distanceMatrix']:
         print(row)
     data['start_end_point'] = 0
+    # create manager and routing model
     manager = pywrapcp.RoutingIndexManager(len(data['distanceMatrix']),1,data['start_end_point'])
     routing = pywrapcp.RoutingModel(manager)
     
     routing.solver().Add(
-    routing.NextVar(routing.Start(0)) >= manager.NodeToIndex(4)  # Start from a donor (index >= 4)
+    routing.NextVar(routing.Start(0)) >= manager.NodeToIndex(4)  # ensures that route starts from a donor (index >= 4) to avoid reaching acceptor with no food
     )
     print("\nSOLUTION")
     solution = solveBestRoute(data, manager, routing)

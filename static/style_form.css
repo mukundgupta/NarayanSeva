@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body, html {
     height: 100%;
     overflow: hidden;
@@ -187,4 +188,195 @@ label {
   
   .btn:hover {
     opacity: 1;
+=======
+body, html {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+	margin: 0;
+  }
+h1 {
+  color: white;
+}
+label {
+  color: white;
+}
+  * {
+    box-sizing: border-box;
+  }
+  .bg-img {
+    /* The image used */
+    /* background-image: url('http://cdn.wallpapersafari.com/13/6/Mpsg2b.jpg'); */
+    font-family: 'Raleway', sans-serif;
+  
+    /* Control the height of the image */
+    min-height: 720px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  /* Add styles to the form container */
+  .container {
+   /* background-image: url('GM.png');
+    background-size:  750px 900px;*/
+    background-color: #53ae8daa;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    border-radius: 20px;   
+    max-width:750px;
+    padding: 20px;
+   backdrop-filter: blur(10px);
+   top: 100px;
+   margin:  auto;
+   box-shadow: 0 0 3000px #04AA6D;
+
+    
+  }
+
+  * {
+	box-sizing: border-box;
+}
+
+
+
+.slide-container {
+	height: 100%;
+	width: 100%;
+    top: 0px    ;
+	overflow: hidden;
+}
+
+.slide-main {
+	position:absolute;
+	width: 500%;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+	text-align: left;	
+	overflow: hidden;
+	animation: 20s slide infinite;
+}
+
+.slide {
+	height: 100%;
+	width: 20%;
+	float: left;
+}
+
+@keyframes slide { 
+	0%  { left: 0%; }
+	20% { left: 0%; }
+	25% { left: -100%; }
+	45% { left: -100%; }
+	50% { left: -200%; }
+	70% { left: -200%; } 
+	75% { left: -300%; }
+	90% { left: -300%; }
+	95% { left: -400%; } 
+	100% { left: 0%; }
+}
+  .custom-btn {
+    width: 100%;
+    height: 60px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    font-size: 30px;
+    border-radius: 50px;
+  }
+  
+  .btn-14 {
+    background: rgb(255,151,0);
+    border: none;
+    z-index: 1;
+    border-radius: 50px;
+
+  }
+  .btn-14:after {
+    border-radius: 50px;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    background-color: #eaf818;
+    background-image: linear-gradient(315deg, #eaf818 0%, #f6fc9c 74%);
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5);
+    transition: all 0.3s ease;
+  }
+  .btn-14:hover {
+    color: #412c00;
+  }
+  .btn-14:hover:after {
+    top: auto;
+    bottom: 0;
+    height: 100%;
+  }
+  .btn-14:active {
+    top: 2px;
+  }
+ 
+  
+  /* Full-width input fields */
+    input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    border-radius: 15px;
+    background: #cfcfcf;
+  }
+  .heading {
+   margin:0 0 0.25em 0;
+   font-size:250%;
+   line-height:1.05
+  }
+  
+  @media (min-width: 820px) {
+   .heading--xlarge {
+    font-size:340%
+   }
+  }
+  .heading--tight {
+   line-height: 0.9
+  }
+  
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit button */
+  .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 1;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+>>>>>>> 45147a1f7bb4677053e53e813b6840f86ae203de
   }

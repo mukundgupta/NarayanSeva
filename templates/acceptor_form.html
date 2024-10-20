@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -103,3 +104,104 @@
     </div>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Form</title>
+    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style_form.css')}}"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@1,800&family=Pixelify+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <body>
+    <div class="check-contain">
+      <div id="checkout-scroll">
+        <div class="checkout">
+          <div class="add-info"><b> Acceptor Registration Form</b></div>
+          <div class="add-info-small"></div>
+          <br />
+          <br />
+          <br />
+          <form class="enter-more" method="post" action="/submit-a">
+            <div class="group">
+              <input id="name" name="d_name" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Name of Organization</b></label>
+            </div>
+
+            <div class="group">
+              <input name="email" id="email" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Email</b></label>
+            </div>
+            <div class="group">
+              <input name="number" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Contact Number</b></label>
+            </div>
+
+            <br />
+
+            <div class="group">
+              <input name="Address" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Address</b></label>
+            </div>
+
+            <div class="group">
+              <input name="req" required />
+              <span class="highlight"></span>
+              <span class="bar"></span>
+              <label><b>Food Requirement (number of people)</b></label>
+            </div>
+
+            <div class="group">
+              <input id="terms-box" type="checkbox" required />
+              <label id="terms"
+                >I agree that the above details are correct</label
+              >
+            </div>
+
+            <input
+              id="subm"
+              type="submit"
+              class="interactable"
+              data-type="submit"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+>>>>>>> 45147a1f7bb4677053e53e813b6840f86ae203de

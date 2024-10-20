@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Donor Form</title>
-    <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+    <title>Home-NarayanSeva</title>
 
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='style_form.css')}}"
+      href="{{url_for('static', filename='style_form.css')}}"
     />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,69 +28,77 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+      
   </head>
-
   <body>
-    <div class="check-contain">
-      <div id="checkout-scroll">
-        <div class="checkout">
-          <div class="add-info"><b> Acceptor Registration Form</b></div>
-          <div class="add-info-small"></div>
-          <br />
-          <br />
-          <br />
-          <form class="enter-more" method="post" action="/submit-a">
-            <div class="group">
-              <input id="name" name="d_name" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Name of Organization</b></label>
-            </div>
-
-            <div class="group">
-              <input name="email" id="email" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Email</b></label>
-            </div>
-            <div class="group">
-              <input name="number" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Contact Number</b></label>
-            </div>
-
-            <br />
-
-            <div class="group">
-              <input name="Address" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Address</b></label>
-            </div>
-
-            <div class="group">
-              <input name="req" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Food Requirement (number of people)</b></label>
-            </div>
-
-            <div class="group">
-              <input id="terms-box" type="checkbox" required />
-              <label id="terms"
-                >I agree that the above details are correct</label
-              >
-            </div>
-
-            <input
-              id="subm"
-              type="submit"
-              class="interactable"
-              data-type="submit"
-            />
-          </form>
+    <div class="bg-img">
+      <div class="slide-container">
+        <div class="slide-main">
+          <img
+            src="{{url_for('static',filename='sliding1.jpg')}}"
+            alt=""
+            class="slide"
+          />
+          <img
+            src="{{url_for('static', filename='sliding2.jpg')}}"
+            alt=""
+            class="slide"
+          />
+          <img
+            src="http://www.pixelstalk.net/wp-content/uploads/2016/08/Background-HD-Wallpapers.jpg"
+            alt=""
+            class="slide"
+          />
+          <img
+            src="http://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-background-wallpaper-hd.jpg"
+            alt=""
+            class="slide"
+          />
+          <img
+            src="http://www.pixelstalk.net/wp-content/uploads/2016/10/Armored-Core-Desktop-Wallpaper.jpg"
+            alt=""
+            class="slide"
+          />
         </div>
+      </div>
+      <div class="above">
+        <form class="container" action="/submit" method="post">
+          <h1>Donor Registration</h1>
+
+          <label for="name"><b>Name Of Organizaation</b></label>
+          <input
+            type="text"
+            placeholder="To get updates"
+            name="name"
+            required
+          />
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required />
+
+          <label for="email"><b>Contact Number</b></label>
+          <input
+            type="text"
+            placeholder="Used to contact when food is to be delivered"
+            name="Contact-Num"
+            required
+          />
+          <label for="email"><b>Address</b></label>
+          <input
+            type="text"
+            placeholder="Enter a renowned Address "
+            name="Address"
+            required
+          />
+          <label for="req"><b>Food Requirement</b></label>
+          <input
+            type="text"
+            placeholder="Number of people to feed"
+            name="req"
+            required
+          />
+
+          <button type="submit" class="custom-btn btn-14">Submit</button>
+        </form>
       </div>
     </div>
   </body>

@@ -96,7 +96,7 @@ ul li a{
   background-size: 200%;
   animation: background-pan 2s infinite;
   animation-timing-function: linear;
-  text-shadow: 0 0 30px rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.468);
   
 }
 

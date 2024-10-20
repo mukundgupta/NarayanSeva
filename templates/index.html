@@ -38,6 +38,7 @@
     <div id="sidebar">
 
       <ul class="side-text">
+        <h1 class="head-text">NarayanSeva</h1>
         <li><a href="{{url_for('food_form')}}">Input Data as Donor</a></li>
         <li><a href="{{url_for('static', filename='view_donors.html')}}">View All Donors</a></li>
         <li><a href="{{url_for('static', filename='view_acceptors.html')}}">View All Acceptors</a></li>
@@ -188,25 +189,25 @@
       </div> 
       </a>  -->
 
-      <a class = "neon" id="acce" href="#">
+      <a class = "neon" class="interactable" data-type="lead-to-page" id="acce" href="{{url_for('acceptor_form')}}">
         <span></span>
         <span></span>
         <span></span>
         <span></span><b>Accepting Meals</b>
     </a>
-    <a class = "neon" id="meal" href="{{url_for('donor_form')}}">
+    <a class = "neon" id="meal" class="interactable" data-type="lead-to-page"href="{{url_for('donor_form')}}">
         <span></span>
         <span></span>
         <span></span>
         <span></span><b>Contributing Meals</b>
     </a>
-    <a class = "neon" id="vol" href="{{url_for('volunteer_form')}}">
+    <a class = "neon" id="vol" class="interactable" data-type="lead-to-page" href="{{url_for('volunteer_form')}}">
         <span></span>
         <span></span>
         <span></span>
         <span></span><b>Volunteering</b>
     </a>
-    <a class = "neon" id="don" href="#">
+    <a class = "neon" class="interactable" id="don" data-type="lead-to-page" href="{{url_for('static', filename='donate.html')}}">
       <span></span>
       <span></span>
       <span></span>

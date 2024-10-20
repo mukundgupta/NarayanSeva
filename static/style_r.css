@@ -73,7 +73,15 @@ table {
     background-color: white;
 }
 
-
+ol{
+  color: white;
+}
+ul {
+  color: white;
+}
+h1 {
+  color: white;
+}
 .getStartedButton{
     left: 300px;
     font-size: 17px;

@@ -54,8 +54,6 @@ def submit_a():
         print("added")
     return render_template('submit-a.html')
 
-
-
 @app.route('/food_form')
 def food_form():
     donors = []

@@ -1,7 +1,7 @@
 import csv
 
-item = input("Item Delivered: ")
-units = int(input("Number of units of items delivered: "))
+# item = input("Item Delivered: ")
+# units = int(input("Number of units of items delivered: "))
 
 def remove_items(item, units):
     l = []
@@ -26,12 +26,15 @@ def remove_items(item, units):
                 l.append(row)
         if found == False:
             print("Item not found in inventory!")
+            return 0
 
         file.seek(0)
+        
+        file.truncate(0)
         writer = csv.writer(file)
         writer.writerows(l)
 
      
-remove_items(item, units)
+# remove_items(item, units)
 
 

@@ -3,6 +3,7 @@ import main
 import addAcceptorData
 import addDonorData
 import csv
+import remove_deli_from_inventory
 
 
 app = Flask(__name__)
@@ -97,19 +98,27 @@ def submit_f():
             print("added")
     return render_template('submit-f.html')
 
-@app.route('/fooddeli')
-def fooddeli():
-    return render_template('fooddeli.html')
+@app.route('/deli_form')
+def deli_form():
+    return render_template('food_deli_form.html')
 
 @app.route('/submit-v',  methods=['POST', 'GET'])
 def submit_v():
     # getting details from html form
     if request.method == 'POST':
         item = request.form.get("item")
-        units = request.form.get("q")
-        print([item,units])
+        num = request.form.get("number")
+        units = int(request.form.get("q"))
+        code = request.form.get("code")
+        print([item,units,code])
+        check = remove_deli_from_inventory.remove_items(item,units)
+        if check == 0:
+            return render_template('submit-v-fail.html')
+        else:
+            print("done")
+            return render_template('submit-v.html')
+        
 
-    return render_template('submit-v.html')
 
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=False)

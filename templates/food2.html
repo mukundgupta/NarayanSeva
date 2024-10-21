@@ -36,12 +36,12 @@
     <div class="check-contain">
       <div id="checkout-scroll">
         <div class="checkout">
-          <div class="add-info"><b> Food Input Form</b></div>
+          <div class="add-info"><b> Non Perishable food Input Form</b></div>
           <div class="add-info-small">Thanks for helping out!</div>
           <br />
           <br />
           <br />
-          <form class="enter-more" method="post" action="/submit">
+          <form class="enter-more" method="post" action="/submit-f">
             <div class="group">
               <label for="donors">Select Donor</label>
               <div class="donor_select">
@@ -63,30 +63,22 @@
               <label><b>Contact Number</b></label>
             </div>
             <div class="group">
-              <input name="rice" required />
+              <input name="item" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Quantity of rice (in kg)</b></label>
+              <label><b>Name of Item</b></label>
             </div>
             <div class="group">
-              <input name="dal" required />
+              <input name="q" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Quantity of dal (in kg)</b></label>
+              <label><b>Quantity of item</b></label>
             </div>
-
             <div class="group">
-              <input name="roti" required />
+              <input name="exp" required />
               <span class="highlight"></span>
               <span class="bar"></span>
-              <label><b>Quantity of Roti (in kg)</b></label>
-            </div>
-
-            <div class="group">
-              <input name="vege" required />
-              <span class="highlight"></span>
-              <span class="bar"></span>
-              <label><b>Quantity of sabji (in kg)</b></label>
+              <label><b>Days till expiry</b></label>
             </div>
             <br />
 

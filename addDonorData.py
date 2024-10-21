@@ -2,7 +2,8 @@ import csv
 import get_coord_display
 
 '''Takes a list with donor data as argument. 
-Generates an ID, attempts to get coordinates(latitude, longitude) from the provided address using get_coord_display.py and then appends data to a CSV file (donorData.csv)'''
+Generates an ID, attempts to get coordinates(latitude, longitude) from the provided address using get_coord_display.py
+ and then appends data to a CSV file (donorData.csv)'''
 
 #Structure of donor data:
 #["donor_id","name_of_org", "contact","email","address","coordinates"]

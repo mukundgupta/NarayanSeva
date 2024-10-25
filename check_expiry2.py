@@ -1,6 +1,6 @@
 import csv as c
 def de_if_exp():
-    f = open('item_detail.csv','r')
+    f = open('static/item_detail.csv','r')
     r = c.reader(f)
 
     inven = open("inventory.txt", "r")
@@ -17,7 +17,7 @@ def de_if_exp():
             inv-=(int(i[2]))
         
 
-    f1 = open('item_detail.csv','w',newline = '')
+    f1 = open('static/item_detail.csv','w',newline = '')
     w = c.writer(f1)
     w.writerow(['Packaged item name','Days till expiry','Units'])
     w.writerows(l)# file with item that will be expired tomorrow removed
@@ -28,3 +28,4 @@ def de_if_exp():
     print(inv)
     
 
+de_if_exp()

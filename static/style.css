@@ -45,14 +45,14 @@ ul li{
 }
 
 ul li a{
-	background:#ffffffbe;
-	color: black;
-	border-bottom:1px solid black;
+	background:#ffffff00;
+	color: rgb(255,255,255);
+	border-bottom:5px solid white;
 	display:block;
 	width:180px;
 	padding:10px;
 	text-decoration: none;
-  border-radius: 5px;
+  border-radius: 0px;
 }
 
 #sidebar-btn{
@@ -65,7 +65,7 @@ ul li a{
 	position:absolute;
 	top:0px;
   border-radius: 20px;
-	right:-60px;
+	right:-70px;
 }
 
 #sidebar-btn span{

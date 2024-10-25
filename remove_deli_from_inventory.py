@@ -5,7 +5,7 @@ import csv
 
 def remove_items(item, units):
     l = []
-    with open("item_detail.csv", "r+",newline='') as file:
+    with open("static/item_detail.csv", "r+",newline='') as file:
         
         reader = csv.reader(file)
         found = False
@@ -19,7 +19,9 @@ def remove_items(item, units):
                 if rem >= 1:
                     #add row to list
                     l.append([item,row[1], rem])
+                    break
                 else:
+                    break
                     print("all units of items removed.")
 
             else:
@@ -27,6 +29,7 @@ def remove_items(item, units):
         if found == False:
             print("Item not found in inventory!")
             return 0
+        
 
         file.seek(0)
         

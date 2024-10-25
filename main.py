@@ -122,7 +122,7 @@ def main():
 
     
 
-
+    
 
     return route_nodes,direct,data['loc_names'], allo
     

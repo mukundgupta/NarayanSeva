@@ -24,6 +24,27 @@ def volunteer_form():
     
     return render_template('volunteer_form.html')
 
+@app.route('/login')
+def login():
+    
+    return render_template('loginpage.html')
+
+@app.route('/forum',  methods=['POST', 'GET'])
+def forum():
+    # getting details from html form
+    if request.method == 'POST':
+        name = request.form.get('user')
+        code = request.form.get('pass')
+   
+        with open("data.csv","r") as file:
+            reader = csv.reader(file)
+            for row in reader:
+                if row[0] == name:
+                    if row[1] == code:
+                        
+                        return render_template('forum.html')
+                
+    return render_template('forum-fail.html')
 
 @app.route('/donor_form')
 def donor_form():
@@ -92,7 +113,7 @@ def submit_f():
         item = request.form.get("item")
         units = request.form.get("q")
         print([item,exp,units])
-        with open("item_detail.csv","a") as file:
+        with open("static/item_detail.csv","a") as file:
             writer = csv.writer(file)
             writer.writerow([item, exp, units])
             print("added")
@@ -110,13 +131,24 @@ def submit_v():
         num = request.form.get("number")
         units = int(request.form.get("q"))
         code = request.form.get("code")
-        print([item,units,code])
-        check = remove_deli_from_inventory.remove_items(item,units)
-        if check == 0:
-            return render_template('submit-v-fail.html')
+        user = request.form.get("user")
+        con = False
+        with open("vol_detail.csv","r") as file:
+            reader = csv.reader(file)
+            next(reader)
+            for row in reader:
+                if row[0] == user:
+                    if row[1] == code:
+                        con = True
+        if con == True:
+            check = remove_deli_from_inventory.remove_items(item,units)
+            if check == 0:
+                return render_template('submit-v-fail.html')
+            else:
+                print("done")
+                return render_template('submit-v.html')
         else:
-            print("done")
-            return render_template('submit-v.html')
+            return render_template('submit-v-fail.html')
         
 
 

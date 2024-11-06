@@ -30,7 +30,7 @@ def add_donor_data(d_data):
         email = d_data[2]
         addr = d_data[3]
         coords = get_coord_display.get_coordinates(addr)
-        
+        print([count, name, num, email, addr, coords])
         writer.writerow([count, name, num, email, addr, coords])
 
     return "Done"

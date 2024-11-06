@@ -153,5 +153,5 @@ def submit_v():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=False)
+    app.run(host="localhost", port=5000, debug=True, use_reloader=False)
 

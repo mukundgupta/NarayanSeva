@@ -20,7 +20,7 @@ def get_id():
         
 def add_donor_data(d_data):
     '''appends donor data to a csv file.'''
-    with open("static/donorData.csv", "a+",newline='\n') as file:
+    with open("static/donorData.csv", "a+",newline='') as file:
 
         writer = csv.writer(file)
         count = get_id()

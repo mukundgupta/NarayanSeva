@@ -29,6 +29,7 @@
             $(rowData).each(function (j, cellData) {
               row.append($("<td>" + cellData + "</td>"));
             });
+            console.log(row);
             table.append(row);
           });
           return table;

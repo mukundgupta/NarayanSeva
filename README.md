@@ -1,4 +1,4 @@
-# NarayanSeva - A web application to reduce World Hunger, from Sri Sathya Sai Vidya Vihar
+# NarayanSeva - A web application to reduce World Hunger
 
 
 FUNCTIONS AND MODULE DESCRIPTIONS

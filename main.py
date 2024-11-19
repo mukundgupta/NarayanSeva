@@ -44,10 +44,10 @@ def main():
     
     data['donors'] = {
         4:{'type':0,'supply':68},
-        5:{'type':1,'supply':30},
+        5:{'type':1,'supply':70},
         }
 
-    # getting new donors if they are t already in data
+    # getting new donors if they aren't already in data
     with open("static/donorData.csv","r") as file:
 
         file.seek(0)
@@ -87,6 +87,7 @@ def main():
         inventory += int(file.read())
 
     data['donors'][len(data['locations'])] = {'type':1, 'supply':inventory}
+    data['loc_names'].append("End Point")
 
    
     # since OSRM requires data as lon,lat intead of lat,lon, we swap them
@@ -97,6 +98,7 @@ def main():
     for row in data['distanceMatrix']:
         print(row)
     data['start_end_point'] = 0
+
     # create manager and routing model
     manager = pywrapcp.RoutingIndexManager(len(data['distanceMatrix']),1,data['start_end_point'])
     routing = pywrapcp.RoutingModel(manager)
@@ -104,6 +106,7 @@ def main():
     routing.solver().Add(
     routing.NextVar(routing.Start(0)) >= manager.NodeToIndex(4)  # ensures that route starts from a donor (index >= 4) to avoid reaching acceptor with no food
     )
+    
     print("\nSOLUTION")
     solution = solveBestRoute(data, manager, routing)
     
@@ -130,7 +133,8 @@ def main():
 
 
 def createDistanceMatrix(coordinates):
-    # use OSRM HTML API by putting coordiantes in the url; annotations=distance makes the response contain distance instead of duration between coordinates
+    # use OSRM HTML API by putting coordiantes in the url; 
+    # 'annotations=distance' makes the response contain distance instead of time between coordinates
     url = f"http://router.project-osrm.org/table/v1/driving/{coordinates}?annotations=distance"
     response = requests.get(url).json()
 
@@ -223,7 +227,7 @@ def solveBestRoute(data, manager, routing):
     solution = routing.SolveWithParameters(parameters)
 
     return solution
-# printing solution (copied)
+# printing solution 
 def print_solution(manager, routing, solution,data):
     """Prints the solution."""
     

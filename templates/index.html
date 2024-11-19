@@ -37,24 +37,21 @@
 
     <div id="sidebar">
 
-      <ul class="side-text">
-        <li><a href="{{url_for('food_form')}}">Input Cooked Food as Donor</a></li>
+      <ul class="side-text">  
         <li><a href="{{url_for('static', filename='view_donors.html')}}">View All Donors</a></li>
         <li><a href="{{url_for('static', filename='view_acceptors.html')}}">View All Acceptors</a></li>
+        <li><a href="{{url_for('food_form')}}">Input Cooked Food (Donor)</a></li>
+        <li><a href="{{url_for('food2')}}">Input Non Perishable Food (Donor)</a></li>
+        <li><a href="{{url_for('static',filename='view_inven.html')}}">View Inventory(for volunteers)</a></li>
         <li><a href="{{url_for('map_page')}}">Today's Route (for volunteers)</a></li>
-        <li><a href="{{url_for('food2')}}">Input Non Perishable Food as Donor</a></li>
-        <li><a href="{{url_for('static',filename='view_inven.html')}}">View Inventory</a></li>
-        <li><a href="{{url_for('login')}}">Login to Community Forum</a></li>
         <li><a href="{{url_for('deli_form')}}">Input delivered items (for volunteers)</a></li>
-        
-        <li><a href="{{url_for('login')}}">Login to Community Forum</a></li>
-       
       </ul>
   
       <div id="sidebar-btn">
         <span></span>
         <span></span>
         <span></span>
+        
       </div>
   
     </div>

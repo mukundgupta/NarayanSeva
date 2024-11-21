@@ -1,8 +1,4 @@
 # NarayanSeva - A web application to reduce World Hunger
-<<<<<<< HEAD
-=======
-
->>>>>>> 78f8abe7ad5f18931d36acdcfee20ae7160a7635
 
 FUNCTIONS AND MODULE DESCRIPTIONS
 

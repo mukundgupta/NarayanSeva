@@ -59,7 +59,7 @@ ul li a{
 	display:inline-block;
 	vertical-align: middle;
 	width:40px;
-	height:px;
+	height:8px;
 	cursor:pointer;
 	margin:20px;
 	position:absolute;
@@ -68,12 +68,15 @@ ul li a{
 	right:-70px;
 }
 
+
 #sidebar-btn span{
 	height:8px;
 	background:white;
 	margin-bottom:5px;
 	display:block;
 }
+
+
 
 #sidebar-btn span:nth-child(2){
 	width:75%;
@@ -116,7 +119,7 @@ ul li a{
 
 
 body{
-  background-color: black;
+  background-color: #002a2b;
   overflow-x: hidden;
   max-height: 2000vh; /* Set max scroll height to 200% of viewport */
   overflow-y: scroll;
@@ -448,12 +451,12 @@ body:hover > #trailer {
 :root {
   --color-bg1: rgb(8, 10, 15);
   --color-bg2: rgb(0, 17, 32);
-  --color1: 18, 113, 255;
-  --color2: 107, 74, 255;
-  --color3: 100, 100, 255;
-  --color4: 50, 160, 220;
-  --color5: 80, 47, 122;
-  --color-interactive: 140, 100, 255;
+  --color1: 18, 113, 100;
+  --color2: 50, 74, 100;
+  --color3: 50, 100, 150;
+  --color4: 50, 160, 100;
+  --color5: 50, 100, 50;
+  --color-interactive: 100, 140, 100;
   --circle-size: 80%;
   --blending: hard-light;
 }
@@ -532,6 +535,23 @@ body:hover > #trailer {
   }
 
   .g1 {
+    z-index: 1;
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+    mix-blend-mode: var(--blending);
+
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+
+    transform-origin: center center;
+    animation: moveVertical 30s ease infinite;
+
+    opacity: 1;
+  }
+
+  .g6 {
     z-index: 1;
     position: absolute;
     background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;

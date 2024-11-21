@@ -38,20 +38,39 @@
       </b>
     </div>
     <!-- Display the optimized route -->
-    <div id="map">
-      <iframe
-        class="map-frame"
-        src="{{ url_for('static', filename='map.html') }}"
-        width="100%"
-        height="600px"
-      ></iframe>
-    </div>
-    <br />
 
     <div class="dir-div">
       <button class="getStartedButton">
         <b><span id="service-button-text">View Directions</span> </b>
       </button>
+    </div>
+    <div class="video-background">
+      <div class="video-foreground">
+        <iframe src="{{ url_for('static', filename='map.html') }}"></iframe>
+      </div>
+    </div>
+
+    <div id="vidtop-content">
+      <div class="vid-info">
+        <b>
+        <h1>Optimized Route</h1>
+        <p>
+          <ol>
+          {% for point in solution %}
+          <li>{{names[point]}}</li>
+          {% endfor %}
+        </ol>
+        </p>
+        <p> <h1>Allocations</h1>
+
+            {% for i in allocations%}
+            <li>{{i}}</li>
+            {%endfor%}
+
+
+        </p>
+      </b>
+      </div>
     </div>
   </body>
 </html>

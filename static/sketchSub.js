@@ -12,8 +12,5 @@ window.onload = function () {
   var time_out = document.getElementById('tech-time-out');
   time_out.innerHTML = tech_time;
 
-
-  
-  
 };
 

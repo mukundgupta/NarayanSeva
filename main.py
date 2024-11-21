@@ -22,14 +22,14 @@ def main():
     Point 1 -> airport 
     Point 2 -> BCM
     Point 3 -> random point (center of indore)
-    Point 4 -> School (sathya sai)
+    Point 4 -> School 
     Point 5 -> NMIMS
     All points after and including 4 are donors
     Acceptors : 1,2,3
     Donors : 4,5
     Starting point: 0
     """
-    data['loc_names'] = ["starting point", "Acceptor A","Acceptor B","Acceptor C","Donor A(Sathya Sai)","Donor B"]
+    data['loc_names'] = ["Starting Point", "Acceptor A","Acceptor B","Acceptor C","Donor A","Donor B"]
 
     data['food_types'] = {
         0:'Cooked Food',
@@ -252,7 +252,8 @@ def print_solution(manager, routing, solution,data):
 
 def display_route_on_map(route):
     center = route[0]
-    route_map = folium.Map(location = center, zoom_start = 13)
+    route_map = folium.Map(location = center, zoom_start = 13, tiles="CartoDB Voyager")
+
     
     for i,(lat,lon) in enumerate(route[0:len(route)-1]):
         
@@ -267,7 +268,7 @@ def display_route_on_map(route):
 
         segment,part_directions = actual_path(start[0], start[1], end[0], end[1])   
         
-        folium.PolyLine(segment, color="green", weight=3.5, opacity=1).add_to(route_map)
+        folium.PolyLine(segment, color="black", weight=3.5, opacity=1).add_to(route_map)
 
         directions.append(part_directions)
     

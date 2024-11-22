@@ -1,5 +1,4 @@
 donor_id,name_of_org,contact,email,address,coordinates
-1,School Name,9826358380,sai@sathyasaiindore.com,"Old A. B. Road, Indore City, Indore, Juni Indore Tahsil, Indore, Madhya Pradesh, 452001, India","(22.757286154164834, 75.90080800995301)"
+1,School Name,9826358380,example@example.com,"Old A. B. Road, Indore City, Indore, Juni Indore Tahsil, Indore, Madhya Pradesh, 452001, India","(22.757286154164834, 75.90080800995301)"
 2,TEST NAME 1,1234567890,mukundgupta2121@gmail.com,"BCM Heights, indore, india","(22.754022893354374,75.90081762245143)"
 3,TEST NAME 2,9192939495,example@example.com,"Khajrana Square, indore, india","('22.7319962', '75.9023972')"
-4,name,,gress,"BCM Heights, indore, india","('22.7537666', '75.9001326')"

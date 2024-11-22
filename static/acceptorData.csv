@@ -1,6 +1,4 @@
-0,v,d,a,f,f,"('-34.5997073', '-58.3928346')"
-0,v,d,a,f,f,"('-34.5997073', '-58.3928346')"
-2,ABC,1234567890,A,ADRESS,60,"('49.3599333', '0.0798883')"
-2,ABC,1234567890,A,ADRESS,60,"('49.3599333', '0.0798883')"
-3,ABC,1234567890,A,ADRESS,60,"('49.3599333', '0.0798883')"
-5,utgugwef,qaewvqev,dqaewvqev,qevqev,qevqevqevqevqev,manual intervention required!
+acc_id,name_of_org,contact,email,requirement,,coordinates
+1,ABC,1234567890,A,ADRESS,60,"('49.3599333', '0.0798883')"
+2,XYZ,1234567890,A,ADRESS,60,"('49.3599333', '0.0798883')"
+3,PQR,1234567890,A,ADRESS,60,"('49.3599333', '0.0798883')"

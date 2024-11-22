@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Route Optimization Results</title>
+    <link
+      rel="stylesheet"
+      href="style_r.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Overpass:ital,wght@1,800&family=Pixelify+Sans&family=Raleway:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h1 class="head-text">Optimized Route</h1>
+
+    <div>
+      <b>
+        <ol class="route-text">
+          {% for point in solution %}
+          <li>{{names[point]}}</li>
+          {% endfor %}
+        </ol>
+        <h1 class="text-2">Allocations</h1>
+        <ul class="allo">
+          {% for i in allocations%}
+          <li>{{i}}</li>
+          {%endfor%}
+        </ul>
+      </b>
+    </div>
+    <!-- Display the optimized route -->
+
+    <div class="dir-div">
+      <button class="getStartedButton">
+        <b><span id="service-button-text">View Directions</span> </b>
+      </button>
+    </div>
+    <div class="video-background">
+      <div class="video-foreground">
+        <iframe src="map.html"></iframe>
+      </div>
+    </div>
+
+    <div id="vidtop-content">
+      <div class="vid-info">
+        <b>
+        <h1>Optimized Route</h1>
+        <p>
+          <ol>
+            1.Starting Point<br>
+            2.DONOR D<br>
+            3.DONOR C<br>
+            4.DONOR B<br>
+            5.Donor B<br>
+            6.Donor A<br>
+            7.Acceptor C<br>
+            8.Acceptor B<br>
+            9.Acceptor A<br>
+            10.End Point
+        </ol>
+        </p>
+        <h1>Allocations</h1>
+        <p> 
+          <ol>
+          Allocated 20 units of food to Acceptor 3 from Donor 5
+
+          Allocated 50 units of food to Acceptor 2 from Donor 5
+          Allocated 30 units of food to Acceptor 1 from Donor 4
+          Allocation Complete!
+          <br>
+          Remaining Supplies after delivery:<br>
+          Donor 4: 38 units of type 0 remaining<br>
+          Donor 5: All food allocated<br>
+          Donor 7: All food allocated<br>
+          Donor 8: All food allocated<br>
+          Donor 9: All food allocated<br>
+          All acceptors needs were fulfilled
+          </ol>
+
+        </p>
+      </b>
+      </div>
+    </div>
+  </body>
+</html>

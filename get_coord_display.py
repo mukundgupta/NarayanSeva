@@ -19,3 +19,4 @@ def get_coordinates(address):
             return "manual intervention required!"
             
 
+print(get_coordinates("Phoenix Citadel, Indore, INDIA"))

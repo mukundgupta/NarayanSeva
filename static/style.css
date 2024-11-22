@@ -201,7 +201,7 @@ body::-webkit-scrollbar-track {
     color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    font-size: 60px;
+    font-size: 4vw;
 }
 
 
@@ -311,7 +311,7 @@ body:hover > #trailer {
   font-family: 'Raleway', sans-serif;
   margin:auto;
   padding: 120vh 0;
-  font-size: 40px;
+  font-size: 1vw;
   height: 1vh;
 }
 /*
@@ -1040,7 +1040,7 @@ body:hover > #trailer {
   z-index: 1;
   color: white;
   
-  font-size: 40px;
+  font-size: 2.7vw;
   font-family: "Raleway", sans-serif;
   display: flex;
   flex-direction: column;
